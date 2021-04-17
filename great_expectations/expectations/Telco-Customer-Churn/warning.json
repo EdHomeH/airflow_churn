@@ -1,0 +1,340 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "Telco-Customer-Churn.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 7747,
+        "min_value": 6338
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 21
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "customerID",
+          "gender",
+          "SeniorCitizen",
+          "Partner",
+          "Dependents",
+          "tenure",
+          "PhoneService",
+          "MultipleLines",
+          "InternetService",
+          "OnlineSecurity",
+          "OnlineBackup",
+          "DeviceProtection",
+          "TechSupport",
+          "StreamingTV",
+          "StreamingMovies",
+          "Contract",
+          "PaperlessBilling",
+          "PaymentMethod",
+          "MonthlyCharges",
+          "TotalCharges",
+          "Churn"
+        ]
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "gender"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "gender",
+        "value_set": [
+          "Female",
+          "Male"
+        ]
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_kl_divergence_to_be_less_than",
+      "kwargs": {
+        "column": "gender",
+        "partition_object": {
+          "values": [
+            "Female",
+            "Male"
+          ],
+          "weights": [
+            0.495243504188556,
+            0.504756495811444
+          ]
+        },
+        "threshold": 0.6
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "MonthlyCharges"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "MonthlyCharges",
+        "max_value": 19.25,
+        "min_value": 17.25
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "MonthlyCharges",
+        "max_value": 119.75,
+        "min_value": 117.75
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "MonthlyCharges",
+        "max_value": 65.76169246059918,
+        "min_value": 63.76169246059918
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "MonthlyCharges",
+        "max_value": 71.35,
+        "min_value": 69.35
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "MonthlyCharges",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              18.65,
+              20.65
+            ],
+            [
+              34.5,
+              36.5
+            ],
+            [
+              69.35,
+              71.35
+            ],
+            [
+              88.85,
+              90.85
+            ],
+            [
+              106.4,
+              108.4
+            ]
+          ]
+        }
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "customerID"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "column": "customerID",
+        "min_value": 1
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "Telco-Customer-Churn",
+        "datasource": "Telco__dir",
+        "path": "/home/user/dev/airflow_churn/data/Telco/Telco-Customer-Churn.csv",
+        "reader_method": "read_csv"
+      },
+      "created_at": 1618147920.5268424,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "Telco-Customer-Churn",
+          "datasource": "Telco__dir",
+          "path": "/home/user/dev/airflow_churn/data/Telco/Telco-Customer-Churn.csv",
+          "reader_method": "read_csv"
+        },
+        "batch_markers": {
+          "ge_load_time": "20210411T133200.068829Z",
+          "pandas_data_fingerprint": "6859fc300286123959ace342b68e91d4"
+        },
+        "batch_parameters": null,
+        "citation_date": "20210411T133200.555123Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "Churn": {
+        "description": ""
+      },
+      "Contract": {
+        "description": ""
+      },
+      "Dependents": {
+        "description": ""
+      },
+      "DeviceProtection": {
+        "description": ""
+      },
+      "InternetService": {
+        "description": ""
+      },
+      "MonthlyCharges": {
+        "description": ""
+      },
+      "MultipleLines": {
+        "description": ""
+      },
+      "OnlineBackup": {
+        "description": ""
+      },
+      "OnlineSecurity": {
+        "description": ""
+      },
+      "PaperlessBilling": {
+        "description": ""
+      },
+      "Partner": {
+        "description": ""
+      },
+      "PaymentMethod": {
+        "description": ""
+      },
+      "PhoneService": {
+        "description": ""
+      },
+      "SeniorCitizen": {
+        "description": ""
+      },
+      "StreamingMovies": {
+        "description": ""
+      },
+      "StreamingTV": {
+        "description": ""
+      },
+      "TechSupport": {
+        "description": ""
+      },
+      "TotalCharges": {
+        "description": ""
+      },
+      "customerID": {
+        "description": ""
+      },
+      "gender": {
+        "description": ""
+      },
+      "tenure": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.13.2",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
