@@ -1,7 +1,6 @@
 venv
 .python-version
 *__pycache__
-data
 secrets.py
 **log*
 .vscode
