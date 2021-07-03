@@ -20,13 +20,13 @@ dag = DAG(
     schedule_interval=None
 )
 
-
 check_csv = GreatExpectationsOperator(
     task_id='validate_csv',
     expectation_suite_name="Telco-Customer-Churn.warning",
     batch_kwargs={
         'path': data_path,
         'datasource': 'Telco__dir',
+        'data_context_root_dir': base_path
     },
     dag=dag
 )

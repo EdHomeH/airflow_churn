@@ -1,4 +1,4 @@
-FROM apache/airflow:2.0.1
+FROM apache/airflow:latest
 
 WORKDIR /opt/airflow
 COPY requirements.txt .

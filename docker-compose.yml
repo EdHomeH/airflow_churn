@@ -10,8 +10,10 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__ENABLE_XCOM_PICKLING: 'true'
+    AIRFLOW__WEBSERVER__RELOAD_ON_PLUGIN_CHANGE: 'true'
   volumes:
     - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/plugins:/opt/airflow/plugins
     - ./data:/opt/airflow/data
     - ./logs:/opt/airflow/logs
     - ./great_expectations:/opt/airflow/great_expectations
@@ -33,6 +35,8 @@ services:
       interval: 5s
       retries: 5
     restart: on-failure
+    ports: 
+      - 5432:5432
 
   airflow-webserver:
     <<: *airflow-common
